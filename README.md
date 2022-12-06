@@ -7,7 +7,7 @@
 3. run
 
 ```shell
-aws s3 sync build/ s3://bridge.skytale.finance --recursive --include "*"
+aws s3 sync build/ s3://bridge.skytale.finance --delete --include "*"
 ```
 
 # cBridge-transfer-widget
