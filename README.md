@@ -4,7 +4,19 @@
 
 1. open terminal
 2. login into skytale-prod in AWS (use [awsume](https://awsu.me/))
-3. run
+3. generate a new production build
+
+```shell
+yarn run build:mainnet
+```
+
+5. to copy the new generated build run
+
+```shell
+aws s3 cp build/ s3://bridge.skytale.finance --recursive --include "*"
+```
+
+6. to remove old files run
 
 ```shell
 aws s3 sync build/ s3://bridge.skytale.finance --delete --include "*"
