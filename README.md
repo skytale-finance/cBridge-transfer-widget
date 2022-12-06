@@ -1,3 +1,15 @@
+# Skytale Bridge Widget
+
+## Deploy
+
+1. open terminal
+2. login into skytale-prod in AWS (use [awsume](https://awsu.me/))
+3. run
+
+```shell
+aws s3 sync build/ s3://bridge.skytale.finance --recursive --include "*"
+```
+
 # cBridge-transfer-widget
 
 Please refer doc here: https://cbridge-docs.celer.network/developer/cbridge-transfer-web-widget
