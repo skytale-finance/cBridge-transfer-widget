@@ -1,0 +1,2 @@
+awsume skytale-prod
+aws s3 cp build/ s3://bridge.skytale.finance --recursive --include "*"
