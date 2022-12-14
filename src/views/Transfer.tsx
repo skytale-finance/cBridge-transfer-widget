@@ -115,7 +115,7 @@ const useStyles = createUseStyles<string, { isMobile: boolean }, Theme>((theme: 
     maxWidth: 560,
     marginTop: props => (props.isMobile ? 0 : 45),
     borderRadius: props => (props.isMobile ? 0 : 16),
-    background: props => (props.isMobile ? "transparent" : theme.secondBackground),
+    background: props => (theme.secondBackground),
     border: props => (props.isMobile ? "none" : `1px solid ${theme.primaryBorder}`),
     "& .ant-card-head": {
       color: theme.primaryBrand,

@@ -1,27 +1,24 @@
-import { createUseStyles } from "react-jss";
-import { useContext, useState, useCallback } from "react";
-import { LoadingOutlined } from "@ant-design/icons";
-import { ColorThemeContext } from "../providers/ThemeProvider";
-import { useAppDispatch, useAppSelector } from "../redux/store";
-import { openModal, ModalName, closeModal } from "../redux/modalSlice";
-import { setIsChainShow, setChainSource } from "../redux/transferSlice";
-import { useWeb3Context } from "../providers/Web3ContextProvider";
-import { Theme } from "../theme/theme";
-import Account from "./Account";
-import cBrdige2Logo from "../images/favicon.png";
-import cBrdige2Light from "../images/cBrdigeLight.svg";
+import {LoadingOutlined} from "@ant-design/icons";
+import {useCallback, useContext, useState} from "react";
+import {createUseStyles} from "react-jss";
+import ViewTab from "../components/ViewTab";
+import {getNetworkById} from "../constants/network";
 import cBrdige2Dark from "../images/cBrdigeDark.svg";
-import homeHistoryIcon from "../images/homehistory.svg";
-import lightHomeHistory from "../images/lightHomeHistory.svg";
-import unicorn from "../images/unicorn.png";
+import cBrdige2Light from "../images/cBrdigeLight.svg";
 import dark from "../images/dark.svg";
+import cBrdige2Logo from "../images/favicon.png";
 import light from "../images/light.svg";
+import {useNonEVMContext} from "../providers/NonEVMContextProvider";
+import {ColorThemeContext} from "../providers/ThemeProvider";
+import {useWeb3Context} from "../providers/Web3ContextProvider";
+import {closeModal, ModalName, openModal} from "../redux/modalSlice";
+import {useAppDispatch, useAppSelector} from "../redux/store";
+import {setChainSource, setIsChainShow} from "../redux/transferSlice";
+import {Theme} from "../theme/theme";
+import {FeatureSupported, getSupportedFeatures} from "../utils/featureSupported";
+import Account from "./Account";
 
 import MenuModal from "./MenuModal";
-import { getNetworkById } from "../constants/network";
-import ViewTab from "../components/ViewTab";
-import { useNonEVMContext } from "../providers/NonEVMContextProvider";
-import { FeatureSupported, getSupportedFeatures } from "../utils/featureSupported";
 /* eslint-disable*/
 
 const useStyles = createUseStyles((theme: Theme) => ({
@@ -345,7 +342,6 @@ function HistoryButton({ totalActionNum, totalPendingNum, onClick }: HistoryButt
     content = (
       <div className={styles.box} onClick={onClick}>
         <div className={styles.titleBox}>
-          <img style={{ maxWidth: "100%", maxHeight: "100%", height: 16 }} src="./unicorn.png" alt="" />
           <span style={{ marginLeft: 2 }}>{`${totalActionNum} Action${
             Number(totalActionNum) !== 1 ? "s" : ""
           } Required`}</span>
@@ -365,11 +361,6 @@ function HistoryButton({ totalActionNum, totalPendingNum, onClick }: HistoryButt
   } else {
     content = (
       <div className={styles.mobileHistoryBtnWrapper} onClick={onClick}>
-        <img
-          src={themeType === "dark" ? homeHistoryIcon : lightHomeHistory}
-          className={styles.mobileHistoryBtnIcon}
-          alt="homeHistoryIcon icon for history"
-        />
         <span className={styles.mobileHistoryText}>History</span>
       </div>
     );
@@ -406,7 +397,7 @@ export default function Header(): JSX.Element {
     if (totalActionNum) {
       content = (
         <div className={classes.historyIner}>
-          <img className={classes.historyIcon2} width={22} key="1" src={unicorn} alt="" />
+
           <span style={{ marginLeft: 30 }}>{`${totalActionNum} Action${
             Number(totalActionNum) !== 1 ? "s" : ""
           } Required`}</span>
@@ -424,19 +415,8 @@ export default function Header(): JSX.Element {
       content = (
         <div
           className={classes.historyIner}
-          style={
-            themeType === "dark"
-              ? { background: "#232530", color: "#ffffff" }
-              : { background: "#ffffff", color: "#2e3a59" }
-          }
+          style={{ background: "#EDF5FA", color: "#2e3a59" }}
         >
-          <img
-            key="3"
-            src={themeType === "dark" ? homeHistoryIcon : lightHomeHistory}
-            className={classes.historyIcon}
-            alt="homeHistoryIcon icon for fauset"
-            style={{ marginRight: 0 }}
-          />
           History
         </div>
       );
@@ -456,32 +436,8 @@ export default function Header(): JSX.Element {
     return (
       <div className={classes.mobilePageHeaderWrapper}>
         <div className={classes.mobileLogoWrapper}>
-          <img
-            onClick={() => {
-              window.location.reload();
-            }}
-            src={biglogoUrl}
-            height="26px"
-            alt="cBridge"
-            style={{ position: "absolute", left: 15, marginBottom: 2 }}
-          />
-
           <div className={classes.mobileHeaderPanel} style={{ flex: "1 0 auto" }}>
-            <div style={{ marginRight: 2 }}>
-              {signer && (
-                <HistoryButton
-                  totalActionNum={totalActionNum}
-                  totalPendingNum={totalPaddingNum}
-                  onClick={() => handleOpenHistoryModal()}
-                />
-              )}
-            </div>
             <Account />
-            <div className={classes.themeIcon} onClick={toggleTheme}>
-              <div style={{ width: 20, height: 20 }}>
-                <img src={toggleIconUrl} style={{ width: "100%", height: "100%" }} alt="protocol icon" />
-              </div>
-            </div>
           </div>
         </div>
 
@@ -498,14 +454,6 @@ export default function Header(): JSX.Element {
   return (
     <div className={classes.header}>
       <div className={classes.hleft}>
-        <div className={classes.mobileLogoWrapper}>
-          <img
-            src={biglogoUrl}
-            height="26px"
-            alt="cBridge"
-            style={{ position: "absolute", left: 15, marginBottom: 2 }}
-          />
-        </div>
 
         {shouldShowViewTab && (
           <div className="tabBody">
@@ -553,11 +501,6 @@ export default function Header(): JSX.Element {
           </div>
         )}
         <Account />
-        <div className={classes.themeIcon} onClick={toggleTheme}>
-          <div style={{ width: 20, height: 20 }}>
-            <img src={toggleIconUrl} style={{ width: "100%", height: "100%" }} alt="protocol icon" />
-          </div>
-        </div>
       </div>
     </div>
   );

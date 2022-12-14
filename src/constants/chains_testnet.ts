@@ -395,4 +395,17 @@ export const testNetworks = {
     tokenSymbolList: ["MATIC", "USDC"],
     lqMintTokenSymbolBlackList: ["MATIC"],
   },
+  EvmosTest: {
+    name: "Evmos TestNet",
+    color: "#3099f2",
+    chainId: 9000,
+    rpcUrl: "https://eth.bd.evmos.dev:8545",
+    blockTime: 7968238,
+    iconUrl: "./evmos.png",
+    blockDelay: 8,
+    symbol: "tEVMOS",
+    blockExplorerUrl: "https://evm.evmos.dev",
+    tokenSymbolList: ["tEVMOS", "USDC"],
+    lqMintTokenSymbolBlackList: ["tEVMOS"],
+  },
 };

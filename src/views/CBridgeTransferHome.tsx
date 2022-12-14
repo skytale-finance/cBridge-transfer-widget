@@ -3,10 +3,6 @@ import { Layout, message } from "antd";
 import { createUseStyles } from "react-jss";
 import { useAsync } from "react-use";
 import { Redirect, Route, Switch, useHistory } from "react-router-dom";
-import { GithubFilled, TwitterCircleFilled } from "@ant-design/icons";
-// import Vconsole from "vconsole";
-import { DiscordCircleFilled, TelegramCircleFilled } from "../icons";
-import docIcon from "../images/doc.svg";
 import { Theme } from "../theme";
 import Transfer from "./Transfer";
 import HistoryModal from "./HistoryModal";
@@ -46,9 +42,7 @@ import {
   NFTHistory,
   NFTBridgeStatus,
 } from "../constants/type";
-import { PRE_UPGRADE_LINK } from "../constants";
 import { CHAIN_LIST, getNetworkById } from "../constants/network";
-import HomeCircleFilled from "../icons/HomeCircleFilled";
 import ViewTab from "../components/ViewTab";
 import { mergeTransactionHistory } from "../utils/mergeTransferHistory";
 import { mergeNFTHistory } from "../utils/mergeNFTHistory";
@@ -223,38 +217,6 @@ function FooterContent() {
   return (
     <div className={classes.footerContainer}>
       <div className={classes.footerText}>Powered by Celer Network</div>
-      <div className={classes.social}>
-        <HomeCircleFilled onClick={() => window.open("https://www.celer.network", "_blank")} />
-
-        {/* eslint-disable-next-line */}
-        <img
-          alt="cBridgeDocIcon"
-          style={{ cursor: "pointer" }}
-          src={docIcon}
-          onClick={() => window.open("https://cbridge-docs.celer.network", "_blank")}
-        />
-        <DiscordCircleFilled onClick={() => window.open("https://discord.gg/uGx4fjQ", "_blank")} />
-        <TelegramCircleFilled onClick={() => window.open("https://t.me/celernetwork", "_blank")} />
-        <TwitterCircleFilled onClick={() => window.open("https://twitter.com/CelerNetwork", "_blank")} />
-        <GithubFilled onClick={() => window.open("https://github.com/celer-network", "_blank")} />
-      </div>
-      <div className={classes.footerContainerEnd}>
-        {/* eslint-disable-next-line */}
-        <label style={{ cursor: "pointer" }} onClick={() => window.open("https://form.typeform.com/to/Q4LMjUaK")}>
-          Contact Support
-        </label>
-        {/* eslint-disable-next-line */}
-        <label
-          style={{ marginLeft: 24, cursor: "pointer" }}
-          onClick={() => window.open("https://get.celer.app/cbridge-v2-doc/tos-cbridge-2.pdf")}
-        >
-          Terms of Service
-        </label>
-        {/* eslint-disable-next-line */}
-        <label style={{ marginLeft: 24, cursor: "pointer" }} onClick={() => window.open(PRE_UPGRADE_LINK)}>
-          Migrate Liquidity from Pre-upgrade Pools
-        </label>
-      </div>
     </div>
   );
 }

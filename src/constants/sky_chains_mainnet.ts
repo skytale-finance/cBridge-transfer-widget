@@ -1,16 +1,4 @@
 export const mainnetNetworks = {
-  localhost: {
-    name: "--",
-    color: "#666666",
-    chainId: 31337,
-    rpcUrl: "http://localhost:8545",
-    blockTime: 3000,
-    iconUrl: "./defaultIcon.svg",
-    blockDelay: 4,
-    symbol: "ETH",
-    blockExplorerUrl: "",
-    tokenSymbolList: ["USDT"],
-  },
   mainnet: {
     name: "Ethereum Mainnet",
     chainId: 1,
@@ -30,16 +18,6 @@ export const mainnetNetworks = {
     blockExplorerUrl: "https://bscscan.com",
     tokenSymbolList: ["USDC", "USDT", "WETH", "BUSD", "DODO", "DOMI", "MCB", "oneDODO", "OLO", "PSP", "ATL", "PEOPLE", "SOS", "FRAX", "CEC", "WOO", "PERP", "SAFLE", "WBNB", "BNB", "GHX", "TSD", "SYS", "FXS", "DF", "USX", "REVA", "JPEG", "AVG", "PERL", "MASK", "LUSD", "SWAY", "MSU", "UCG", "MELOS", "REEF", "MGH", "ANML", "HUH", "iZi", "DTR", "AKRO", "iUSD", "SHI", "OOKI", "PBR", "PEEL", "SHELL", "GNO", "OKSE", "WING", "WRT", "MUXLP", "muxUSD", "muxETH", "muxBTC", "muxBNB", "muxAVAX", "muxFTM", "GOV", "PSTAKE", "S2K", "LEAP", "NYM"],
     lqMintTokenSymbolBlackList: ["oneDODO", "OLO", "PSP", "ATL", "PEOPLE", "SOS", "FRAX", "SAFLE", "BNB", "GHX", "TSD", "SYS", "FXS", "REVA", "AVG", "LUSD", "SWAY", "MSU", "UCG", "MELOS", "MGH", "DTR", "AKRO", "OOKI", "PBR", "PEEL", "SHELL", "GNO", "OKSE", "WRT", "MUXLP", "muxUSD", "muxETH", "muxBTC", "muxBNB", "muxAVAX", "muxFTM", "GOV", "PSTAKE", "S2K", "LEAP", "NYM"]
-  },
-  Evmos: {
-    name: "Evmos",
-    chainId: 9001,
-    rpcUrl: "https://evmos-mainnet.public.blastapi.io",
-    iconUrl: "./evmos.png",
-    symbol: "EVMOS",
-    blockExplorerUrl: "https://evm.evmos.org/",
-    tokenSymbolList: ["USDT", "USDC", "DAI", "WETH", "WBTC", "CELR", "BNB", "BUSD", "AVAX", "FTM", "AURORA", "FRAX", "FXS"],
-    lqMintTokenSymbolBlackList: ["USDT", "USDC", "DAI", "WETH", "WBTC", "CELR", "BNB", "BUSD", "AVAX", "FTM", "AURORA", "FRAX", "FXS"]
   },
   polygon: {
     name: "Polygon (Matic)",
@@ -131,6 +109,26 @@ export const mainnetNetworks = {
     blockExplorerUrl: "https://moonbeam.moonscan.io",
     tokenSymbolList: ["USDC", "USDT", "CELR", "PEOPLE", "FRAX", "CONV", "WETH", "WBTC", "BUSD", "FXS", "ZLK"],
     lqMintTokenSymbolBlackList: ["USDC", "USDT", "CELR", "PEOPLE", "FRAX", "CONV", "WETH", "WBTC", "BUSD", "FXS"]
+  },
+  Oasis: {
+    name: "Oasis Emerald",
+    chainId: 42262,
+    rpcUrl: "https://emerald.oasis.dev",
+    iconUrl: "./oasis.png",
+    symbol: "ROSE",
+    blockExplorerUrl: "https://www.oasisscan.com",
+    tokenSymbolList: ["USDC", "USDT", "WETH", "BNB", "AVAX", "FTM", "AMY", "DAI", "CELR"],
+    lqMintTokenSymbolBlackList: ["USDC", "USDT", "WETH", "BNB", "AVAX", "FTM", "AMY", "DAI", "CELR"]
+  },
+  Evmos: {
+    name: "Evmos",
+    chainId: 9001,
+    rpcUrl: "https://evmos-mainnet.public.blastapi.io",
+    iconUrl: "./evmos.png",
+    symbol: "EVMOS",
+    blockExplorerUrl: "https://evm.evmos.org/",
+    tokenSymbolList: ["USDT", "USDC", "DAI", "WETH", "WBTC", "CELR", "BNB", "BUSD", "AVAX", "FTM", "AURORA", "FRAX", "FXS"],
+    lqMintTokenSymbolBlackList: ["USDT", "USDC", "DAI", "WETH", "WBTC", "CELR", "BNB", "BUSD", "AVAX", "FTM", "AURORA", "FRAX", "FXS"]
   },
   Klaytn: {
     name: "Klaytn",
