@@ -436,16 +436,6 @@ export default function Header(): JSX.Element {
     return (
       <div className={classes.mobilePageHeaderWrapper}>
         <div className={classes.mobileLogoWrapper}>
-          <img
-            onClick={() => {
-              window.location.reload();
-            }}
-            src={biglogoUrl}
-            height="26px"
-            alt="cBridge"
-            style={{ position: "absolute", left: 15, marginBottom: 2 }}
-          />
-
           <div className={classes.mobileHeaderPanel} style={{ flex: "1 0 auto" }}>
             <Account />
           </div>
