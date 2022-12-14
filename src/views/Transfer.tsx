@@ -1,5 +1,5 @@
 import { FC, useCallback, useEffect, useMemo, useState } from "react";
-import { Card, Button, Avatar, Tooltip, Modal } from "antd";
+import {Card, Button, Avatar, Tooltip, Modal, Alert} from "antd";
 import { createUseStyles } from "react-jss";
 import { useToggle, useNetworkState, useAsync } from "react-use";
 import { formatUnits } from "@ethersproject/units";
@@ -2396,6 +2396,14 @@ const Transfer: FC = () => {
 
   return (
     <div className={classes.flexCenter}>
+      <div>
+        <Alert
+          message="The Skytale bridging Services are provided and controlled by a third-party."
+          description="Skytale takes no responsibility for performance and is not liable for any potential loss of funds."
+          type="error"
+          closable
+        />
+      </div>
       <Card className={classes.transferCard} bordered={false}>
         <div className={classes.cardContent}>
           {fromChain && isApeChain(fromChain.id) && isMobile ? <ApeTip /> : <></>}
