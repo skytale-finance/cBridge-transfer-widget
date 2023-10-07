@@ -13,9 +13,12 @@ export const mainnetNetworks = {
   },
   mainnet: {
     name: "Ethereum Mainnet",
+    color: "#29b6af",
     chainId: 1,
     rpcUrl: "https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161",
+    blockTime: 15000,
     iconUrl: "./ETH.png",
+    blockDelay: 8,
     symbol: "ETH",
     blockExplorerUrl: "https://etherscan.io",
     tokenSymbolList: ["USDC", "USDT", "WETH", "BUSD", "DODO", "LYRA", "DOMI", "MCB", "oneDODO", "OLO", "BOBA", "PSP", "XTK", "Metis", "WXT", "PEOPLE", "SOS", "FRAX", "CEC", "STND", "WOO", "CELR", "KROM", "PERP", "SAFLE", "DAI", "PKEX", "WBTC", "GHX", "CONV", "TSD", "AAVE", "CRV", "SYS", "FXS", "DF", "USX", "AELIN", "REVA", "JPEG", "CGG", "AVG", "PERL", "WAGMIV1", "WAGMIV2", "MASK", "LUSD", "THALES", "MSU", "UCG", "MELOS", "REEF", "iZi", "ASTR", "MGH", "ANML", "HUH", "GOVI", "GEL", "DEVT", "DTR", "NFTY", "RLY", "AKRO", "iUSD", "SHI", "OOKI", "WAGMIV3", "PBR", "FLX", "PLOT", "XBP", "RAGE", "UMA", "SOLACE", "LFI", "cfUSDC", "GNO", "LUSD", "WING", "MUXLP", "muxUSD", "muxETH", "muxBTC", "GOV", "PSTAKE", "SEAN", "JPYC", "CERES", "DEO", "S2K", "LEAP", "NYM"],
@@ -23,23 +26,16 @@ export const mainnetNetworks = {
   },
   bsc: {
     name: "BNB Chain",
+    color: "#7057ff",
     chainId: 56,
-    rpcUrl: "https://bscrpc.com/",
+    rpcUrl: "https://bsc-dataseed.binance.org",
+    blockTime: 4000,
     iconUrl: "./bnbchain.png",
+    blockDelay: 8,
     symbol: "BNB",
     blockExplorerUrl: "https://bscscan.com",
     tokenSymbolList: ["USDC", "USDT", "WETH", "BUSD", "DODO", "DOMI", "MCB", "oneDODO", "OLO", "PSP", "ATL", "PEOPLE", "SOS", "FRAX", "CEC", "WOO", "PERP", "SAFLE", "WBNB", "BNB", "GHX", "TSD", "SYS", "FXS", "DF", "USX", "REVA", "JPEG", "AVG", "PERL", "MASK", "LUSD", "SWAY", "MSU", "UCG", "MELOS", "REEF", "MGH", "ANML", "HUH", "iZi", "DTR", "AKRO", "iUSD", "SHI", "OOKI", "PBR", "PEEL", "SHELL", "GNO", "OKSE", "WING", "WRT", "MUXLP", "muxUSD", "muxETH", "muxBTC", "muxBNB", "muxAVAX", "muxFTM", "GOV", "PSTAKE", "S2K", "LEAP", "NYM"],
     lqMintTokenSymbolBlackList: ["oneDODO", "OLO", "PSP", "ATL", "PEOPLE", "SOS", "FRAX", "SAFLE", "BNB", "GHX", "TSD", "SYS", "FXS", "REVA", "AVG", "LUSD", "SWAY", "MSU", "UCG", "MELOS", "MGH", "DTR", "AKRO", "OOKI", "PBR", "PEEL", "SHELL", "GNO", "OKSE", "WRT", "MUXLP", "muxUSD", "muxETH", "muxBTC", "muxBNB", "muxAVAX", "muxFTM", "GOV", "PSTAKE", "S2K", "LEAP", "NYM"]
-  },
-  Evmos: {
-    name: "Evmos",
-    chainId: 9001,
-    rpcUrl: "https://evmos-mainnet.public.blastapi.io",
-    iconUrl: "./evmos.png",
-    symbol: "EVMOS",
-    blockExplorerUrl: "https://evm.evmos.org/",
-    tokenSymbolList: ["USDT", "USDC", "DAI", "WETH", "WBTC", "CELR", "BNB", "BUSD", "AVAX", "FTM", "AURORA", "FRAX", "FXS"],
-    lqMintTokenSymbolBlackList: ["USDT", "USDC", "DAI", "WETH", "WBTC", "CELR", "BNB", "BUSD", "AVAX", "FTM", "AURORA", "FRAX", "FXS"]
   },
   polygon: {
     name: "Polygon (Matic)",
